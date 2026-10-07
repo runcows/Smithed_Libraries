@@ -1,0 +1,21 @@
+extend: "@smithed_libraries/common.yaml"
+
+id: smithed.interaction
+name: Smithed Interaction
+version: "1.0.0"
+description: Interaction Library for Smithed
+author: runcows
+
+data_pack:
+  name: Smithed Interaction
+  load:
+    data/smithed.interaction/modules: modules
+
+require:
+  - bolt
+
+meta:
+  bolt:
+    entrypoint: ["*"]
+  mecha:
+    formatting: minify
