@@ -3,7 +3,12 @@
 # ---------------         SIT         --------------- #
 # --------------------           -------------------- #
 # --------------------------------------------------- #
-function smithed.interaction:impl/custom/sit:
+FUNCTION_LOCATION = "smithed.interaction:impl/custom/sit"
+PUBLIC_TAG = f"#{FUNCTION_LOCATION.replace('impl/','')}"
+function FUNCTION_LOCATION:
+  raw # @public
+  append function_tag smithed.interaction:on_right_click/sit {"values":[PUBLIC_TAG]}
+
   # Functions
   AT_HEIGHT = ~/at_height
   SEC = ~/sec
@@ -34,7 +39,6 @@ function smithed.interaction:impl/custom/sit:
     }
   }
   
-  append function_tag smithed.interaction:event/on_right_click/custom/sit {"values":[(~/)]}
   # Follow
   if data entity @s data.smithed_interaction.on_right_click{height:"follow"} return:
     tag @s add smithed.interaction.sittable_interaction.follow

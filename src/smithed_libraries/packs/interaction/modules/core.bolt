@@ -58,7 +58,7 @@ for action in [
       if data entity @s SHORTCUT_LOC at @s function ~/try_shortcut:
         try_action(
           "custom shortcut", 
-          "$function #smithed.interaction:event/on_right_click/custom/$(custom)", 
+          f"$function #smithed.interaction:{action['data_location']}/$(custom)", 
           SHORTCUT_LOC, 
           "is not a valid shortcut. Cannot contain characters not valid in a function path!"
         )
